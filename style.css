@@ -196,7 +196,7 @@ select:hover {
 
 .content-area {
     border-radius: 8px;
-    height: calc(100vh - 270px);
+    height: calc(100vh - 380px);
     position: relative;
     background-color: var(--bg-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -627,4 +627,57 @@ select:hover {
 
 .copyright i {
     margin-right: 5px;
+}
+
+/* Ad Containers */
+.ad-container-top {
+    width: 100%;
+    min-height: 90px;
+    margin-bottom: 20px;
+    background-color: var(--toolbar-bg);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ad-container-side {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 160px;
+    min-height: 600px;
+    background-color: var(--toolbar-bg);
+    border-radius: 8px;
+    display: none; /* Hidden on mobile */
+}
+
+.ad-container-bottom {
+    width: 100%;
+    min-height: 90px;
+    margin-top: 20px;
+    background-color: var(--toolbar-bg);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Show side ad on larger screens */
+@media (min-width: 1400px) {
+    .ad-container-side {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        margin-right: 200px; /* Make space for side ad */
+    }
+}
+
+/* Adjust content area height */
+.content-area {
+    height: calc(100vh - 380px); /* Adjusted for ads */
 }
