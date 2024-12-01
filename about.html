@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Online Notepad</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="about-container">
+            <div class="about-header">
+                <h1>About Developer</h1>
+                <button id="darkMode" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+            </div>
+            <div class="about-content">
+                <div class="developer-info">
+                    <img src="assets/images/profile.jpg" alt="Developer" class="profile-pic">
+                    <p class="developer-credit">Developed by Yash</p>
+                </div>
+                <div class="project-info">
+                    <h2>Project Features</h2>
+                    <ul>
+                        <li>Rich Text Editing</li>
+                        <li>Dark Mode Support</li>
+                        <li>File Operations</li>
+                        <li>Text Formatting</li>
+                        <li>Auto-Save Feature</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Editor</a>
+        </div>
+    </div>
+    <script>
+        // Dark mode functionality
+        const darkModeBtn = document.getElementById('darkMode');
+        
+        // Load dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            darkModeBtn.classList.add('active');
+        }
+
+        // Dark mode toggle
+        darkModeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            darkModeBtn.classList.toggle('active');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+    </script>
+</body>
+</html>
